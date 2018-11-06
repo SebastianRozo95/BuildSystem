@@ -1,0 +1,26 @@
+.navbar{
+  margin-top: 15px;
+}
+.compras{
+  position: absolute;
+  font-size: 9px;
+  padding: 3px 4px 2px 4px;
+  margin-left: -7px;
+  margin-top: 9px;
+  border-radius: 5px;
+}
+.container-navbar{
+  padding: 0;
+}
+.nav-xs{
+  margin-top: 15px;
+  text-align: right;
+}
+.nav-xs a{
+  color: #777;
+  margin:10px;
+  cursor: pointer;
+}
+.nav li a{
+  cursor: pointer;
+}

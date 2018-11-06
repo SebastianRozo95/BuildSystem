@@ -1,0 +1,35 @@
+.row-principal{
+  background: url('assets/images/background/main-fondo.jpg') center;
+  background-size: 100%;
+  height: 100vh;
+}
+.row-productos{
+  background-color: #f8f8f8;
+  min-height: 200px;
+  border-radius: 3px;
+}
+.title-header{
+  border-bottom: 1px solid red;
+}
+.input-sm{
+  height: 23px;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+.image-producto{
+  width: 100%;
+  height: 170px;
+  border: 1px solid #ddd;
+  text-align: center;
+  background-size: auto 105%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.image-producto img{
+  max-height: 170px;
+  max-width: 100%;
+}
+.thumbnail .caption h3{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

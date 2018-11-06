@@ -1,0 +1,34 @@
+<div class="row-principal">
+  <app-nav></app-nav>
+  <div class="container">
+    <div class="row row-productos">
+      <div cass="title-header">
+        <div class="col-md-12">
+          <h2>Carrito de compras</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-sm-6 lista-carrito">
+          <div class="media" *ngFor="let item of productos;">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" [src]="item.imagen" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h3 class="media-heading">{{item.nombre}}</h3>
+              <strong>Unidades: </strong>{{item.disponible}}<br />
+              <strong>Subtotal: </strong><label class="subtotal" >${{item.valor*item.cantidad}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h2><strong>Total: </strong> ${{total}}</h2>
+          <button class="btn btn-default" [routerLink]="['../home']">Cancelar</button>
+          <button class="btn btn-default" (click)="btnPagar()">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

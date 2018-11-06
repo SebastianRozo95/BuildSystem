@@ -1,0 +1,39 @@
+<div class="row-principal">
+  <app-nav></app-nav>
+  <div class="container">
+    <div class="row row-productos">
+      <div cass="title-header">
+        <div class="col-md-9 col-xs-6">
+          <h2>Catalogo de Productos</h2>
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <h4>¿Qué estas buscando?</h4>
+          <input type="text" class="form-control" placeholder="Buscar producto" [(ngModel)]="search" />
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="col-xs-6 col-sm-4 col-md-3" *ngFor="let item of items | async | filter:search">
+          <div class="thumbnail">
+            <div class="image-producto" [ngStyle]="{ 'background-image': 'url(' + item.imagen + ')'}"></div>
+              <div class="caption">
+                <h3>{{item.nombre}}</h3>
+                <p>
+                  <strong>Precio:</strong> ${{item.valor}}
+                </p>
+                <p>
+                  <strong>Unidades Disponibles:</strong> {{item.disponible}}
+                </p>
+                <div class="row">
+                  <div class="col-xs-5"><a (click)="modalProducto(item.nombre, item.valor, item.disponible, item.imagen , item.informacion)" class="btn btn-primary btn-xs" role="button">Ver más</a></div>
+                  <div class="col-xs-3"><a (click)="addCarrito(item.$key, item.nombre, item.valor, item.disponible, item.imagen)" class="btn btn-warning btn-xs" role="button">Añadir</a></div>
+                  <div class="col-xs-4"><input class="form-control input-sm" [(ngModel)]="inputCantidad[item.$key]" type="number" min=1 [max]="item.disponible"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
